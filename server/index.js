@@ -23,13 +23,6 @@ async function start () {
   // Give nuxt middleware to express
   app.use(nuxt.render)
 
-  app.get('/api/helloworld',function(req, res){
-    res.json({
-      msg: '你好',
-      status: 1
-    })
-  })
-
   // Listen the server
   app.listen(port, host)
   consola.ready({
