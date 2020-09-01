@@ -18,6 +18,9 @@
         <Button target="_blank" to="https://www.iviewui.com/">
           iView
         </Button>
+        {{testData}}
+        <div v-for="(item, index) in testData" :key="index">{{index}}</div>
+        333333333333333
       </div>
     </div>
   </div>
@@ -25,14 +28,29 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import axios from 'axios'
 import {getPicList} from '../apis/index.js'
 export default {
   components: {
     Logo
   },
+  data(){
+    return {
+      testData: [1,2,3]
+    }
+  },
+  async asyncData  (context) {
+    return {
+      testData: [23,44,2]
+    }
+  },
+  fetch(){
+
+  },
   mounted(){
     getPicList().then((res)=>{
       console.log(res)
+      this.testData = res.data.data
     })
   },
   methods: {

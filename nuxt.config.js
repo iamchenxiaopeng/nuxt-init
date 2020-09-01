@@ -53,7 +53,7 @@ module.exports = {
   },
   proxy: {
     '/api/': {
-      target: 'https://helloxiaopeng.com/',
+      target: 'http://chaotu.weiwutong.dev.cwsaas.com/',
       pathRewrite: {
         '^/api': ''
       }
